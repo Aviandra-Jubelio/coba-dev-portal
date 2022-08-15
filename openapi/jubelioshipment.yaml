@@ -24,7 +24,7 @@ tags:
       Endpoints to get the detail location (provinces, areas, cities, districts) of the consignee.
 
 paths:
-  /region:
+  /region/:
     get:
       tags:
         - Region
@@ -750,11 +750,11 @@ paths:
       description:
         One transaction number can use more than one voucher code. If there is one invalid voucher code, the redemption process will fail.
         <br>
-        Invalid vouchers will happen if = <br>
-        - The voucher code is not exist (Due to wrong input/format). <br>
-        - The voucher code is expired. <br>
-        - The voucher cannot be used at this time. <br>
-        - The voucher code has already been used. <br>
+        The vouchers will be invalid if = <br>
+        - The voucher code is **not exist** (Due to wrong input/format). <br>
+        - The voucher code is **expired**. <br>
+        - The voucher **cannot be used at this time**. <br>
+        - The voucher code **has already been used**. <br>
       operationId: RedeemVoucher
       parameters:
         - $ref: "#/components/parameters/authorization"
